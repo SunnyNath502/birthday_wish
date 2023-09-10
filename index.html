@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HAPPY BIRTHDAY, ISHA!</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('https://media0.giphy.com/media/l4KhWPNyLHiB3TjVe/giphy.gif?cid=ecf05e470iqu3gti26xknhs43m5ljrv7sbd9spvngwh8jee1&ep=v1_gifs_search&rid=giphy.gif&ct=g') no-repeat center center fixed;
+            background-size: cover;
+            animation: backgroundAnimation 20s linear infinite;
+        }
+
+        @keyframes backgroundAnimation {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }
+        }
+
+        .container {
+            text-align: center;
+            padding: 100px;
+            /* background-color: rgba(1, 11, 17, 0.8); */
+        }
+
+        h1 {
+            font-size: 50px;
+            color: #ff0066; /* You can choose any color you like */
+        }
+
+        p {
+            font-size: 30px;
+            margin-top: 10px;
+            color: #f50606;
+            opacity: 1; /* Adjust opacity as needed for readability */
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 50%;
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .gallery-item {
+            flex: 0 0 calc(33.333% - 20px); /* Adjust the width as needed for your layout */
+            max-width: calc(33.333% - 20px); /* Adjust the width as needed for your layout */
+            overflow: hidden;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.2s;
+        }
+
+        .gallery-item img:hover {
+            transform: scale(1.1);
+        }
+
+        .caption {
+            text-align: center;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        /* Hide all gallery items initially */
+        .hidden {
+            display: none;
+        }
+        .gift {
+            text-align: center;
+        }
+
+        /* Style the "Hit it for gift" button */
+        .gift button {
+            font-size: 24px; /* Increase the font size for better visibility */
+            padding: 15px 30px; /* Add padding for a larger button */
+            margin-top: 20px; /* Add a bit more margin for the button */
+            border: none; /* Remove the default button border */
+            border-radius: 50%; /* Make the button round */
+            background-color: #ff0066; /* Change the button background color */
+            color: #fff; /* Change the text color */
+            cursor: pointer;
+        }
+
+        /* Increase the size of photos in the gallery */
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.2s;
+            max-width: 100%; /* Increase the max-width to make photos larger */
+        }
+
+        .gallery-item img:hover {
+            transform: scale(1.5);
+        }
+
+        /* Hide all gallery items initially */
+        .hidden {
+            display: none;
+        }
+        /* audio {
+            display: none; /* Hide the default audio controls */
+        /* } */ */
+        .play-button-container {
+            text-align: center;
+            background-color: red;
+            padding: 20px 0; /* Adjust padding as needed */
+        }
+
+        /* Style the "Play Music" button */
+        .play-button {
+            font-size: 24px;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 50%;
+            background-color: red; /* Change background color to red */
+            color: #fff;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="sc1.png" alt="ISHA">
+        <h1>HAPPY BIRTHDAY ISHA &#x1F389;&#x1F389;</h1>
+        <p>Wishing you a day filled with love and happiness.</p>
+    </div>
+</audio>
+
+<!-- Add a button to start the audio -->
+<button onclick="playAudio()">Play Music</button>
+
+<script>
+    function playAudio() {
+        const audio = document.getElementById('bg-music');
+        audio.play();
+    }
+</script>
+    <div class="gift">
+        <button onclick="showNextPhoto()">Hit it for gift</button>
+        <div class="gallery">
+            <!-- Add your photos and captions here, each wrapped in a div with the "gallery-item" class -->
+            <div class="gallery-item hidden">
+                <img src="https://media1.giphy.com/media/NyoRUUFPAfXgZ4VTLw/200w.webp?cid=ecf05e474mk52yd2a3fl695d50h523i2sx3x89cm6mva0tzb&ep=v1_gifs_search&rid=200w.webp&ct=g" alt="Photo 1">
+                <p class="caption">HOW IS THE GIFT???</p>
+            </div>
+            
+            <!-- Add more photos and captions as needed -->
+        </div>
+    </div>
+    <audio id="bg-music" loop>
+        <source src="happy-birthday-song.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script>
+        function playAudio() {
+            const audio = document.getElementById('bg-music');
+            audio.play();
+            // Hide the play button after clicking it
+            const playButton = document.querySelector('.play-button');
+            playButton.style.display = 'none';
+        }
+
+        let currentPhotoIndex = 0;
+
+        function showNextPhoto() {
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            if (currentPhotoIndex < galleryItems.length) {
+                galleryItems[currentPhotoIndex].classList.remove('hidden');
+                currentPhotoIndex++;
+            }
+        }
+    </script>
+</body>
+</html>
